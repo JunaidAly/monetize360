@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import SEO from '../components/SEO'
 import { Phone, Mail, MessageCircle, Send, Share2, Shield, Zap, Users } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 function Contact() {
+  const form = useRef()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +19,8 @@ function Contact() {
       consulting: false
     }
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success' or 'error'
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -38,8 +42,43 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission here
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    // Send email using EmailJS
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text)
+      setSubmitStatus('success')
+      setIsSubmitting(false)
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        website: '',
+        earnings: '',
+        message: '',
+        services: {
+          mcm: false,
+          ivt: false,
+          hb: false,
+          consulting: false
+        }
+      })
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000)
+    }, (error) => {
+      console.error('FAILED...', error)
+      setSubmitStatus('error')
+      setIsSubmitting(false)
+      // Clear error message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000)
+    })
   }
 
   const contactMethods = [
@@ -199,7 +238,31 @@ function Contact() {
               transition={{ duration: 0.8 }}
             >
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-3xl p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-green-500/10 border border-green-500 rounded-lg text-green-400"
+                  >
+                    ✓ Message sent successfully! We'll get back to you soon.
+                  </motion.div>
+                )}
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-4 bg-red-500/10 border border-red-500 rounded-lg text-red-400"
+                  >
+                    ✗ Failed to send message. Please try again or contact us directly via email.
+                  </motion.div>
+                )}
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+                  {/* Hidden fields for EmailJS to capture checkbox values */}
+                  <input type="hidden" name="from_name" value={formData.name} />
+                  <input type="hidden" name="from_email" value={formData.email} />
+                  <input type="hidden" name="services" value={Object.keys(formData.services).filter(key => formData.services[key]).map(key => key.toUpperCase()).join(', ') || 'None selected'} />
+
                   <div>
                     <label className="block text-white font-semibold mb-2">
                       Name
@@ -363,12 +426,15 @@ function Contact() {
 
                   <motion.button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                    disabled={isSubmitting}
+                    className={`w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-2 ${
+                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
+                    whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                    whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                   >
-                    <Send size={20} />
-                    <span>Send Message</span>
+                    <Send size={20} className={isSubmitting ? 'animate-pulse' : ''} />
+                    <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                   </motion.button>
                 </form>
               </div>

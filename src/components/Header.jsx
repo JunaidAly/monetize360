@@ -14,7 +14,7 @@ function Header() {
     { to: "/", icon: Home, label: "Home" },
     { to: "/about", icon: User, label: "About" },
     { to: "/services", icon: Settings, label: "Services" },
-    { href: "#", icon: Briefcase, label: "Apply my MCM" }
+    { to: "/apply-my-mcm", icon: Briefcase, label: "Apply my MCM" }
   ]
 
   return (
