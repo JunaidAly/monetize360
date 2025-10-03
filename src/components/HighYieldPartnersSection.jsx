@@ -25,7 +25,7 @@ function HighYieldPartnersSection() {
 
   const partners = [
     { id: 1, name: 'Adbumps', image: '/assets/partners/1.jpg' },
-    { id: 2, name: 'AdSparc', image: '/assets/partners/2.jpg' },
+    { id: 2, name: 'Sovrn', image: '/assets/partners/2.png' },
     { id: 3, name: 'Zoklent', image: '/assets/partners/4.png' },
     { id: 4, name: 'MGID', image: '/assets/partners/3.png' },   
   ]
