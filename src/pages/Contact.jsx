@@ -45,12 +45,26 @@ function Contact() {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    // Get EmailJS credentials from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+    // Check if credentials are available
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('EmailJS credentials missing:', { serviceId, templateId, publicKey })
+      setSubmitStatus('error')
+      setIsSubmitting(false)
+      setTimeout(() => setSubmitStatus(null), 5000)
+      return
+    }
+
     // Send email using EmailJS
     emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      serviceId,
+      templateId,
       form.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      publicKey
     )
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text)
