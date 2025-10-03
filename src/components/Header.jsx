@@ -46,7 +46,7 @@ function Header() {
             </motion.button>
 
             {/* Logo - Center on mobile, left on desktop */}
-            <Link to="/" className="flex-shrink-0 order-2 lg:order-1 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
+            {/* <Link to="/" className="flex-shrink-0 order-2 lg:order-1 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
               <motion.img
                 src="/logo.jpg"
                 alt="Monetize360 Global"
@@ -57,7 +57,7 @@ function Header() {
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               />
-            </Link>
+            </Link> */}
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex flex-1 justify-center order-2">
