@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import {
   Share2,
   DollarSign,
@@ -119,6 +120,11 @@ function Services() {
       animate="visible"
       variants={containerVariants}
     >
+      <SEO
+        title="Our Services - MCM, Header Bidding, Analytics & More | Monetize360"
+        description="Explore Monetize360's comprehensive monetization services: Google MCM invitations, Header Bidding, Pro Analytics, IVT Prevention, and AdOps Consulting. Maximize your ad revenue."
+        keywords="MCM invitations, header bidding, ad analytics, IVT prevention, AdOps consulting, Google AdX, publisher services"
+      />
       {/* Hero Section */}
       <motion.section className="relative py-24 px-8" variants={containerVariants}>
         <div className="max-w-7xl mx-auto text-center">

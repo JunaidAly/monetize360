@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import { Phone, Mail, MessageCircle, Send, Share2, Shield, Zap, Users } from 'lucide-react'
 import { useState } from 'react'
 
@@ -90,6 +91,11 @@ function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black">
+      <SEO
+        title="Contact Us - Get Started with Monetize360 Global"
+        description="Contact Monetize360 Global to start maximizing your ad revenue. Reach out via email, phone, or WhatsApp. Get expert monetization analysis and support."
+        keywords="contact monetize360, publisher support, ad monetization contact, MCM inquiry, website monetization help"
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-8">
         <motion.div

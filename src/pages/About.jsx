@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import {
   Globe,
   Users,
@@ -123,6 +124,11 @@ function About() {
       animate="visible"
       variants={containerVariants}
     >
+      <SEO
+        title="About Monetize360 Global - AdTech Monetization Experts"
+        description="Learn about Monetize360 Global, serving 400+ publishers across 50+ countries with innovative AdTech solutions. Our mission is to democratize premium ad monetization."
+        keywords="about monetize360, AdTech company, ad monetization experts, publisher network, Google MCM partner"
+      />
       {/* Hero Section */}
       <motion.section className="relative py-24 px-8" variants={containerVariants}>
         <div className="max-w-7xl mx-auto text-center">
