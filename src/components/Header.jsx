@@ -46,7 +46,7 @@ function Header() {
             </motion.button>
 
             {/* Logo - Center on mobile, left on desktop */}
-            {/* <Link to="/" className="flex-shrink-0 order-2 lg:order-1 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
+            <Link to="/" className="flex-shrink-0 order-2 lg:order-1 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
               <motion.img
                 src="/logo.jpg"
                 alt="Monetize360 Global"
@@ -57,7 +57,7 @@ function Header() {
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
               />
-            </Link> */}
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex flex-1 justify-center order-2">
@@ -99,7 +99,7 @@ function Header() {
             </div>
 
             {/* Contact Button */}
-            <Link to="/contact" className="order-3">
+            {/* <Link to="/contact" className="order-3">
               <motion.button
                 className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 sm:px-6 lg:px-8 py-2 lg:py-3 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 flex items-center space-x-2 text-sm lg:text-base"
                 initial={{ opacity: 0, x: 50 }}
@@ -112,7 +112,7 @@ function Header() {
                 <span className="hidden sm:inline">Get in touch</span>
                 <span className="sm:hidden">Contact</span>
               </motion.button>
-            </Link>
+            </Link> */}
           </div>
         </div>
 
