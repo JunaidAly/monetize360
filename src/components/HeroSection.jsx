@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Smartphone } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function HeroSection() {
   return (
@@ -70,17 +71,19 @@ function HeroSection() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
         >
-          <motion.button
-            className="border-2 border-white bg-black/30 backdrop-blur-sm mb-10 text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm uppercase tracking-wider font-bold flex items-center justify-center space-x-2 shadow-2xl hover:shadow-white/25"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 0 30px rgba(255,255,255,0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Smartphone size={18} />
-            <span>REGISTER FOR MCM Network</span>
-          </motion.button>
+          <Link to="/apply-my-mcm">
+            <motion.button
+              className="border-2 border-white bg-black/30 backdrop-blur-sm mb-10 text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm uppercase tracking-wider font-bold flex items-center justify-center space-x-2 shadow-2xl hover:shadow-white/25"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 30px rgba(255,255,255,0.3)",
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Smartphone size={18} />
+              <span>REGISTER FOR MCM Network</span>
+            </motion.button>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

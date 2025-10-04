@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SEO from '../components/SEO'
+import { Link } from 'react-router-dom'
 import {
   Globe,
   Users,
@@ -437,6 +438,7 @@ function About() {
             variants={containerVariants}
           >
             <motion.div variants={itemVariants}>
+              <Link to="/apply-my-mcm">
               <motion.button
                 className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 flex items-center space-x-2"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -445,8 +447,11 @@ function About() {
                 <Users size={20} />
                 <span>Join Our Network</span>
               </motion.button>
+              </Link>
             </motion.div>
+            
             <motion.div variants={itemVariants}>
+              <Link to="/services">
               <motion.button
                 className="border border-gray-600 text-gray-300 px-8 py-4 rounded-full font-semibold hover:border-blue-400 hover:text-blue-400 transition-all duration-300 flex items-center space-x-2"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -455,6 +460,7 @@ function About() {
                 <TrendingUp size={20} />
                 <span>Learn More</span>
               </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

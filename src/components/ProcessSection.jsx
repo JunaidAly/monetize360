@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   ChevronLeft,
@@ -248,6 +249,7 @@ function ProcessSection() {
           >
             Ready to start your monetization journey?
           </motion.p>
+          <Link to="/apply-my-mcm">
           <motion.div variants={itemVariants}>
             <motion.button
               className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-full font-semibold hover:from-orange-600 hover:to-red-700 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25 inline-flex items-center space-x-2"
@@ -258,6 +260,7 @@ function ProcessSection() {
               <ArrowRight size={20} />
             </motion.button>
           </motion.div>
+          </Link>
         </motion.div>
       </div>
     </motion.section>

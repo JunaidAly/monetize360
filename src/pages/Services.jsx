@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SEO from '../components/SEO'
+import { Link } from 'react-router-dom'
 import {
   Share2,
   DollarSign,
@@ -158,6 +159,7 @@ function Services() {
             Comprehensive monetization solutions designed to maximize your revenue potential
           </motion.p>
           <motion.div variants={itemVariants}>
+            <Link to="/contact">
             <motion.button
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 flex items-center space-x-2 mx-auto"
               whileHover={{ scale: 1.05, y: -2 }}
@@ -166,9 +168,10 @@ function Services() {
               <span>Get in touch</span>
               <ArrowRight size={20} />
             </motion.button>
-          </motion.div>
-        </div>
-      </motion.section>
+          </Link>
+        </motion.div>
+      </div>
+    </motion.section>
 
       {/* Services Grid */}
       <motion.section className="py-16 px-8" variants={containerVariants}>
@@ -308,6 +311,7 @@ function Services() {
             variants={containerVariants}
           >
             <motion.div variants={itemVariants}>
+              <Link to="/contact">
               <motion.button
                 className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 flex items-center space-x-2"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -316,8 +320,10 @@ function Services() {
                 <MessageCircle size={20} />
                 <span>Start Conversation</span>
               </motion.button>
+            </Link>
             </motion.div>
             <motion.div variants={itemVariants}>
+              <Link to="/contact">
               <motion.button
                 className="border border-gray-600 text-gray-300 px-8 py-4 rounded-full font-semibold hover:border-blue-400 hover:text-blue-400 transition-all duration-300 flex items-center space-x-2"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -326,6 +332,7 @@ function Services() {
                 <Mail size={20} />
                 <span>Send Email</span>
               </motion.button>
+            </Link>
             </motion.div>
           </motion.div>
         </div>

@@ -13,7 +13,7 @@ function Footer() {
             </p>
             <div className="flex items-center space-x-2 text-gray-400 mb-2">
               <Mail size={16} />
-              <span>contact@monetize360global.com</span>
+              <span>info@monetize360.global</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-400 mb-2">
               <Phone size={16} />

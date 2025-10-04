@@ -98,6 +98,7 @@ function AboutSection() {
                 </motion.div>
               </motion.div>
               <motion.div variants={itemVariants}>
+                <Link to="/contact">
                 <motion.button
                   className="border border-gray-600 text-gray-300 px-8 py-4 rounded-full font-semibold hover:border-blue-400 hover:text-blue-400 transition-all duration-300 inline-flex items-center justify-center space-x-2"
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -106,6 +107,7 @@ function AboutSection() {
                   <span>Get in touch</span>
                   <ArrowRight size={20} />
                 </motion.button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
