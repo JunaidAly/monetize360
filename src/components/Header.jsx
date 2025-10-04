@@ -50,7 +50,7 @@ function Header() {
               <motion.img
                 src="/logo.jpg"
                 alt="Monetize360 Global"
-                className="h-10 lg:h-14 rounded-full w-auto"
+                className="hidden lg:block h-10 lg:h-14 rounded-full w-auto"
                 initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}

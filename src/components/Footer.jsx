@@ -1,4 +1,5 @@
 import { Heart, Code, Mail, Phone, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -15,25 +16,25 @@ function Footer() {
               <Mail size={16} />
               <span>info@monetize360.global</span>
             </div>
-            <div className="flex items-center space-x-2 text-gray-400 mb-2">
+            {/* <div className="flex items-center space-x-2 text-gray-400 mb-2">
               <Phone size={16} />
               <span>+1 (555) 123-4567</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-400">
               <MapPin size={16} />
               <span>123 Tech Street, Innovation City</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-blue-400">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Services</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Apply MCM</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><Link to="/" className="text-gray-300 hover:text-blue-400 transition-colors">Home</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-blue-400 transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="text-gray-300 hover:text-blue-400 transition-colors">Services</Link></li>
+              <li><Link to="/apply-my-mcm" className="text-gray-300 hover:text-blue-400 transition-colors">Apply MCM</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -41,11 +42,11 @@ function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 text-blue-400">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Web Development</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Mobile Apps</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Digital Marketing</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">UI/UX Design</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">Consulting</a></li>
+              <li className=' text-gray-300'>App Monetization</li>
+              <li className=' text-gray-300'>Website Monetization</li>
+              <li className=' text-gray-300'>Ad Exchange ORTB Integration</li>
+              <li className=' text-gray-300'>MCM</li>
+              <li className=' text-gray-300'>MCM MI Invites</li>
             </ul>
           </div>
         </div>
