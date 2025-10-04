@@ -337,7 +337,7 @@ function Contact() {
                     <label className="block text-white font-semibold mb-3">
                       Leave us a message
                     </label>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                       <motion.label
                         className={`flex items-center space-x-3 p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 ${
                           formData.services.mcm
