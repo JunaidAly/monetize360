@@ -40,6 +40,7 @@ const SEO = ({
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       <meta name="author" content="Monetize360 Global" />
+      <meta name="google-adsense-account" content="ca-pub-4734394754019372"></meta>
     </Helmet>
   );
 };
